@@ -37,9 +37,12 @@ type Length<T extends readonly any[]> = T['length'];
 
 type Length1 = Length<Tuple>;
 
-// Awaited ??????????????????????????
-
-type Awaited = 77777777;
+// Awaited
+type Awaited<T extends PromiseLike<any>> = T extends PromiseLike<infer R>
+  ? R extends PromiseLike<any>
+    ? Awaited<R>
+    : R
+  : never;
 
 // Exclude
 type TExclude<T, U> = T extends U ? never : T;

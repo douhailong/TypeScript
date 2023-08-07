@@ -1,3 +1,3 @@
 <p align='center'>
-  <img src='./src//images/logo.svg' />
+  <img src='https://github.com/type-challenges/type-challenges/raw/main/screenshots/logo.svg' />
 </p>
