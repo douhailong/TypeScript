@@ -1,13 +1,4 @@
-type Obj = { a: 'aaa'; b: 'bbb'; c: 'ccc' };
-
-type Tuple = ['a', 'b', 'c', 'd'];
-type Union = 'a' | 'b' | 'c' | 'd';
-
-type Equal<T, U> = (<R>() => T extends R ? 1 : 2) extends <F>() => U extends F
-  ? 1
-  : 2
-  ? true
-  : false;
+import { Obj, Tuple, Union, Equal } from './_utils';
 
 // Pick
 type TPick<T, U extends keyof T> = {
@@ -45,6 +36,10 @@ type Length<T extends readonly any[]> = T['length'];
 //   : never;
 
 type Length1 = Length<Tuple>;
+
+// Awaited ??????????????????????????
+
+type Awaited = 77777777;
 
 // Exclude
 type TExclude<T, U> = T extends U ? never : T;
